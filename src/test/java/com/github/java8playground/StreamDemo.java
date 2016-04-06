@@ -84,6 +84,9 @@ public class StreamDemo {
 
             @Override
             public String next() {
+                if (next == null) {
+                    throw new NoSuchElementException();
+                }
                 String result = next;
                 try {
                     next = bufferedReader.readLine();
