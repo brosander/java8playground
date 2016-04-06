@@ -15,6 +15,7 @@ repositories {
 }
 
 dependencies {
+  testCompile 'org.hamcrest:java-hamcrest:2.0.0.0'
   testCompile 'junit:junit:4.11'
 }
 

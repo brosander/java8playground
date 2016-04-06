@@ -24,7 +24,7 @@ Intermediate and terminal operations can be short-circuiting if, given infinite 
 
 ## Lazy Processing ##
 Processing streams lazily allows for significant efficiencies;
-in a pipeline such as the filter-map-sum example above, filtering, mapping, and summing can be fused into a single pass on the data, with minimal intermediate state.
+in a pipeline such as the filter-map-sum, filtering, mapping, and summing can be fused into a single pass on the data, with minimal intermediate state.
 Laziness also allows avoiding examining all the data when it is not necessary;
 
 for operations such as "find the first string longer than 1000 characters",
@@ -34,10 +34,9 @@ without examining all of the strings available from the source.
 
 ### Stateless vs. Stateful ###
 Intermediate operations are further divided into stateless and stateful operations.
+
 * Stateless operations, such as filter and map, retain no state from previously seen element when processing a new element
-** Each element can be processed independently of operations on other elements.
+  * Each element can be processed independently of operations on other elements.
 * Stateful operations, such as distinct and sorted, may incorporate state from previously seen elements when processing new elements.
-** Stateful operations may need to process the entire input before producing a result.
-** For example, one cannot produce any results from sorting a stream until one has seen all elements of the stream.
-
-
+  * Stateful operations may need to process the entire input before producing a result.
+  * For example, one cannot produce any results from sorting a stream until one has seen all elements of the stream.
